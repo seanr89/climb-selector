@@ -1,0 +1,96 @@
+openapi: 3.0.0
+info:
+  title: ClimbRoute AI API
+  version: 1.0.0
+paths:
+  /images:
+    post:
+      summary: Upload a new climbing wall image
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                image:
+                  type: string
+                  format: binary
+      responses:
+        '201':
+          description: Image uploaded successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ClimbingWallImage'
+  /images/{id}/routes:
+    get:
+      summary: Get the identified routes for a given image
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A list of routes
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Route'
+  /images/{id}/routes/{color}:
+    get:
+      summary: Get a specific route for a given image and color
+      parameters:
+        - name: id
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: color
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: A specific route
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Route'
+components:
+  schemas:
+    ClimbingWallImage:
+      type: object
+      properties:
+        id:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+    ClimbingHold:
+      type: object
+      properties:
+        id:
+          type: string
+        location:
+          type: array
+          items:
+            type: number
+        color:
+          type: string
+    Route:
+      type: object
+      properties:
+        id:
+          type: string
+        color:
+          type: string
+        holds:
+          type: array
+          items:
+            $ref: '#/components/schemas/ClimbingHold'

@@ -1,16 +1,17 @@
-
 import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:http/http.dart' as http;
 
 class ApiClient {
-  ApiClient({http.Client? httpClient}) : _httpClient = httpClient ?? http.Client();
+  ApiClient({http.Client? httpClient})
+    : _httpClient = httpClient ?? http.Client();
 
   final http.Client _httpClient;
   final String _baseUrl = 'http://localhost:8080';
 
   Future<void> uploadImage(Uint8List imageData) async {
+    print('uploading image');
     final uri = Uri.parse('$_baseUrl/images');
     final request = http.MultipartRequest('POST', uri)
       ..files.add(http.MultipartFile.fromBytes('file', imageData));

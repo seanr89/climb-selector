@@ -35,16 +35,16 @@
 - [X] T016 Implement `GET /images/{id}/routes/{color}` endpoint in `api/src/routes/images/[id]/routes/[color].dart`.
 
 ## Phase 3.4: Core Implementation (Flutter)
-- [ ] T017 Implement image capture screen UI in `app/lib/screens/image_capture_screen.dart`.
-- [ ] T018 Implement route display screen UI in `app/lib/screens/route_display_screen.dart`.
-- [ ] T019 Implement API client in `app/lib/services/api_client.dart`.
-- [ ] T020 Integrate API client with the UI.
+- [X] T017 Implement image capture screen UI in `app/lib/screens/image_capture_screen.dart`.
+- [X] T018 Implement route display screen UI in `app/lib/screens/route_display_screen.dart`.
+- [X] T019 Implement API client in `app/lib/services/api_client.dart`.
+- [X] T020 Integrate API client with the UI.
 
 ## Phase 3.5: Polish
-- [ ] T021 [P] Unit tests for image processing service in `api/tests/unit/test_image_processing_service.dart`.
-- [ ] T022 [P] Unit tests for API client in `app/test/unit/api_client_test.dart`.
-- [ ] T023 Perform manual testing based on `quickstart.md`.
-- [ ] T024 [P] Update documentation (`README.md`, etc.).
+- [X] T021 [P] Unit tests for image processing service in `api/tests/unit/test_image_processing_service.dart`.
+- [X] T022 [P] Unit tests for API client in `app/test/unit/api_client_test.dart`.
+- [X] T023 Perform manual testing based on `quickstart.md`.
+- [X] T024 [P] Update documentation (`README.md`, etc.).
 
 ## Dependencies
 - Tests (T005-T009) before implementation (T010-T020).

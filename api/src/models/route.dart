@@ -1,5 +1,4 @@
-
-import 'package:climb_selector/api/src/models/climbing_hold.dart';
+import 'climbing_hold.dart';
 
 class Route {
   Route({
